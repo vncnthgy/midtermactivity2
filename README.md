@@ -34,6 +34,8 @@ Develop a Vue.js application that allows users to manage a list of products. The
 3. **Edit Product:**
 
     -   Allow users to edit existing products. This can be:
+        -   In-place editing by clicking on a product and displaying editing fields.
+        -   Separate edit page for each product accessed through a click action.
     -   Update the product data in storage on user changes.
     -   Implement form validation to ensure proper data entry.
     -   Animate the update of product details when edited.
@@ -54,6 +56,12 @@ Develop a Vue.js application that allows users to manage a list of products. The
 git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.git
 ```
 
+### Go to project directory
+
+```sh
+cd midtermactivity2
+```
+
 ### Install the project dependencies
 
 ```sh
@@ -63,7 +71,7 @@ npm install
 ### Create your own branch
 
 ```sh
-git checkout -b YOUR-BRANCH-NAME
+git checkout -b your-branch-name
 ```
 
 ### Check your current branch
