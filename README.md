@@ -52,7 +52,7 @@ Develop a Vue.js application that allows users to manage a list of products. The
 ### Clone the project in desired project folder
 
 ```sh
-https://github.com/vncnthgy/midtermactivity2.git
+git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.git
 ```
 
 ### Install the project dependencies
