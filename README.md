@@ -66,6 +66,12 @@ npm install
 git checkout -b YOUR-BRANCH-NAME
 ```
 
+### Check your current branch
+
+```sh
+git branch
+```
+
 ### Run the project
 
 ```sh
