@@ -7,7 +7,6 @@ This lab activity will evaluate your ability to handle forms, animations, and tr
 - [Objectives](#objectives)
 - [Task](#task)
 - [Project Setup](#project-setup)
-- [Screenshots](#screenshots)
 
 ## **Objectives:**
 
@@ -49,7 +48,7 @@ Develop a Vue.js application that allows users to manage a list of products. The
 
 ## Project Setup
 
-### Clone the project in desired project folder
+### Clone the project repository
 
 ```sh
 git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.git
@@ -61,18 +60,14 @@ git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.g
 npm install
 ```
 
-### Go to the project folder and run
+### Create your own branch
+
+```sh
+git checkout -b <RANCH NAME>
+```
+
+### Run the project
 
 ```sh
 npm run dev
 ```
-
-## Screenshots
-
-![Image 1](images/image1.png)
-
-![Image 2](images/image2.png)
-
-![Image 3](images/image3.png)
-
-![Image 4](images/image4.png)
