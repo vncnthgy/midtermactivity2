@@ -63,7 +63,7 @@ npm install
 ### Create your own branch
 
 ```sh
-git checkout -b <RANCH NAME>
+git checkout -b YOUR-BRANCH-NAME
 ```
 
 ### Run the project
