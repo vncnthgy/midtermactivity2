@@ -5,8 +5,9 @@ This lab activity will evaluate your ability to handle forms, animations, and tr
 ## Table of Contents
 
 - [Objectives](#objectives)
-- [Task](#task)
-- [Project Setup](#project-setup)
+- [Tasks](#tasks)
+- [Setup](#setup)
+- [Screenshots](#screenshots)
 
 ## **Objectives:**
 
@@ -15,7 +16,7 @@ This lab activity will evaluate your ability to handle forms, animations, and tr
 -   Implement CRUD operations for product data using array as storage.
 -   Utilize animations and transitions to enhance user experience.
 
-## **Task:**
+## **Tasks:**
 
 Develop a Vue.js application that allows users to manage a list of products. The application should have the following features:
 
@@ -47,41 +48,53 @@ Develop a Vue.js application that allows users to manage a list of products. The
     -   Remove the product from the data storage.
     -   Animate the removal of the product from the list.
     
+## Setup
 
-## Project Setup
-
-### Clone the project repository
-
-```sh
-git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.git
-```
-
-### Go to project directory
+**Clone the project repository:**
 
 ```sh
-cd midtermactivity2
+    git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.git
 ```
 
-### Install the project dependencies
+**Go to project directory:**
 
 ```sh
-npm install
+    cd midtermactivity2
 ```
 
-### Check your current branch
+**Install the project dependencies:**
 
 ```sh
-git branch --all
+    npm install
 ```
 
-### Create your own branch
+**Check your current branch:**
 
 ```sh
-git checkout -b branch-name
+    git branch --all
 ```
 
-### Run the project
+**Create your own branch:**
 
 ```sh
-npm run dev
+    git checkout -b branch-name
 ```
+
+**Run the project:**
+
+```sh
+    npm run dev
+```
+
+## Screenshots
+
+![Image 1](src/assets/images/image1.png)
+
+![Image 2](src/assets/images/image2.png)
+
+![Image 3](src/assets/images/image3.png)
+
+![Image 4](src/assets/images/image4.png)
+
+![Image 5](src/assets/images/image5.png)
+
