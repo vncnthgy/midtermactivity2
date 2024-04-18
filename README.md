@@ -52,37 +52,37 @@ Develop a Vue.js application that allows users to manage a list of products. The
 
 **Clone the project repository:**
 
-```sh
+```
     git -c http.sslVerify=false clone https://github.com/vncnthgy/midtermactivity2.git
 ```
 
 **Go to project directory:**
 
-```sh
+```
     cd midtermactivity2
 ```
 
 **Install the project dependencies:**
 
-```sh
+```
     npm install
 ```
 
 **Check your current branch:**
 
-```sh
+```
     git branch --all
 ```
 
 **Create your own branch:**
 
-```sh
+```
     git checkout -b branch-name
 ```
 
 **Run the project:**
 
-```sh
+```
     npm run dev
 ```
 
@@ -90,11 +90,11 @@ Develop a Vue.js application that allows users to manage a list of products. The
 
 ![Image 1](src/assets/images/image1.png)
 
-![Image 2](src/assets/images/image2.png)
+<!-- ![Image 2](src/assets/images/image2.png) -->
 
-![Image 3](src/assets/images/image3.png)
+<!-- ![Image 3](src/assets/images/image3.png) -->
 
-![Image 4](src/assets/images/image4.png)
+<!-- ![Image 4](src/assets/images/image4.png) -->
 
-![Image 5](src/assets/images/image5.png)
+<!-- ![Image 5](src/assets/images/image5.png) -->
 
