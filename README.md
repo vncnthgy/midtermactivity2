@@ -68,16 +68,16 @@ cd midtermactivity2
 npm install
 ```
 
-### Create your own branch
-
-```sh
-git checkout -b your-branch-name
-```
-
 ### Check your current branch
 
 ```sh
-git branch
+git branch --all
+```
+
+### Create your own branch
+
+```sh
+git checkout -b branch-name
 ```
 
 ### Run the project
