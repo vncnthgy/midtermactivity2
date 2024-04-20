@@ -1,7 +1,6 @@
 <template>
-  <div class="d-flex flex-column justify-content-center align-items-center vh-100">
     <div class="add-product-container container mt-4 shadow p-3 mb-5 bg-white rounded">
-      <div v-if="isAdding" class="add-product-message alert alert-success mt-3 text-center">Product successfully added!</div>
+      <p v-if="successMessage" class="add-product-message alert alert-success mt-3 text-center">{{ successMessage }}</p>
       <form @submit.prevent="addProduct" class="add-product-form">
         <div class="form-group mb-3">
           <label for="name">Product Name:</label>
@@ -16,11 +15,12 @@
           <input type="number" id="price" v-model.number="price" class="form-control" placeholder="Enter Product Price" min="0" required>
         </div>
         <div class="form-group mb-3">
-          <button type="submit" class="form-control btn btn-success btn-block">Add Product</button>
+          <button type="submit" class="btn btn-success btn-block">
+            <span v-if="isAdding" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Submit</button>
         </div>
       </form>
     </div>
-  </div>
 </template>
 
 <script>
@@ -30,27 +30,32 @@ export default {
       isAdding: false,
       name: '',
       description: '',
-      price: ''
+      price: '',
+      successMessage: ''
     };
   },
   methods: {
     addProduct() {
-      if (!this.name || !this.description || !this.price) {
-        return; 
+      if (!confirm("Are you sure you want to add this product?")) {
+        return;
       }
-      const product = {
-        name: this.name,
-        description: this.description,
-        price: this.price
-      };
-      this.$store.dispatch('addProduct', product);
-      this.name = '';
-      this.description = '';
-      this.price = '';
       this.isAdding = true;
       setTimeout(() => {
         this.isAdding = false;
-      }, 3000);
+        const product = {
+          name: this.name,
+          description: this.description,
+          price: this.price
+        };
+        this.$store.dispatch('addProduct', product);
+        this.name = '';
+        this.description = '';
+        this.price = '';
+        this.successMessage = 'Product successfully added!';
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
+      }, 1500);
     }
   }
 };
@@ -67,26 +72,6 @@ export default {
 
   .rounded {
     border-radius: 5px;
-  }
-
-  .d-flex {
-    display: flex;
-  }
-
-  .flex-column {
-    flex-direction: column;
-  }
-
-  .justify-content-center {
-    justify-content: center;
-  }
-
-  .align-items-center {
-    align-items: center;
-  }
-
-  .vh-100 {
-    height: 100vh;
   }
 
   .text-center {
