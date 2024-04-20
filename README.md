@@ -90,7 +90,7 @@ Develop a Vue.js application that allows users to manage a list of products. The
 
 ![Image 1](src/assets/images/image1.png)
 
-<!-- ![Image 2](src/assets/images/image2.png) -->
+![Image 2](src/assets/images/image2.png)
 
 <!-- ![Image 3](src/assets/images/image3.png) -->
 

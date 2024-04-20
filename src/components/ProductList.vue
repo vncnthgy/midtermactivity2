@@ -2,7 +2,6 @@
   <div class="container">
     <h2>List of Products</h2>
     <p class="message">{{ productMessage }}</p>
-
     <table class="table" v-if="products.length">
       <thead>
         <tr>
@@ -34,11 +33,9 @@
         </tr>
       </tbody>
     </table>
-
     <div v-else>
       <p>No product available!</p>
     </div>
-
     <div>
       <AddProduct/>
     </div>
