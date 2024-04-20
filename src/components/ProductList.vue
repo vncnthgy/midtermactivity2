@@ -42,6 +42,11 @@
     <div v-else>
       <p class="alert alert-warning mt-3 text-center">No product available!</p>
     </div>
+    <router-link to="/addproduct">
+      <button class="btn btn-primary rounded-circle position-fixed d-flex align-items-center justify-content-center y-" style="bottom: 20px; right: 20px; width: 60px; height: 60px; font-size: 2rem; padding-top: 1px;">
+        {{ text }}
+      </button>
+    </router-link>
   </div>
 </template>
 
@@ -51,7 +56,8 @@ export default {
     return {
       productMessage: '',
       editingProduct: null,
-      successMessage: ''
+      successMessage: '',
+      text: '>'
     };
   },
   computed: {
