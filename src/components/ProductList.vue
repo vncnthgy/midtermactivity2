@@ -1,3 +1,4 @@
+<!-- Product List.vue -->
 <template>
   <div class="container">
     <h2>List of Products</h2>
@@ -95,13 +96,11 @@ export default {
       product.isSaving = true;
       setTimeout(() => {
         product.isSaving = false; 
-      }, 500); 
+      }, 300); 
 
-      // Optionally, you can add a message or toast here to indicate success
-      console.log('Product edited successfully!');
     },
     deleteProduct(product) {
-      if (confirm("Are you sure you want to delete this product?")) {
+      if (confirm("Are you sure you want to delete the product?")) {
         // Apply bounce animation to the deleted product's row
         product.isDeleting = true;
         setTimeout(() => {
@@ -109,11 +108,11 @@ export default {
           if (index !== -1) {
             this.products.splice(index, 1);
           }
-        }, 500); // Adjust timing based on your animation duration
+        }, 300); 
       }
     },
     editProductFromButton(product) {
-      // Triggered when the edit button is clicked
+    //Edit
       this.editProduct(product);
     }
 

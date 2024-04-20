@@ -1,3 +1,4 @@
+<!-- Add Product.vue -->
 <template>
   <div class="add-product-container">
     <h2>Add Product</h2>
@@ -62,75 +63,5 @@ export default {
 </script>
 
 <style scoped>
-.add-product-container {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  background-color: #333;
-}
 
-.add-product-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.add-product-form .form-group {
-  margin-bottom: 20px;
-}
-
-.add-product-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.add-product-form .form-control {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  box-sizing: border-box;
-  background-color: #444;
-  color: #fff;
-}
-
-.add-product-form .form-control:focus {
-  border-color: #4caf50;
-}
-
-.add-product-form .btn-submit {
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.add-product-form .btn-submit:hover {
-  background-color: #45a049;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1.5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-.add-product-message {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-}
 </style>

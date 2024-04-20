@@ -1,8 +1,9 @@
+<!--  -->
 <template>
   <nav class="navbar">
     <div class="nav-container">
       <router-link to="/" class="nav-link">Product List</router-link>
-      <!-- <router-link to="/addProduct" class="nav-link">Add Product</router-link>  -->
+      <router-link to="/addProduct" class="nav-link">Add Product</router-link>
     </div>
   </nav>
   <router-view/>
@@ -10,14 +11,14 @@
 
 <style>
 .navbar {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
   padding: 10px;
 }
 
 .nav-container {
   display: flex;
-  justify-content: center; /* Center-align the contents horizontally */
+  justify-content: center;
 }
 
 .nav-link {
