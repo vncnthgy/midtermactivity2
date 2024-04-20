@@ -1,40 +1,32 @@
-<!-- App.vue -->
 <template>
-  <div id="app">
-    <header>
-      <nav>
-        <!-- Navigation links -->
-        <router-link to="/">Product List</router-link>
-        <router-link to="/add">Add Product</router-link>
-        <!-- Edit link with dynamic route -->
-        <router-link :to="'/edit/' + productId">Edit Product</router-link>
-      </nav>
-    </header>
-    <router-view />
-  </div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <router-link to="/" class="nav-link">Product List</router-link>
+      <!-- <router-link to="/addProduct" class="nav-link">Add Product</router-link>  -->
+    </div>
+  </nav>
+  <router-view/>
 </template>
 
-<script>
-import Vue from 'vue'
-import Router from '../src/router/index'
-import Vuex from 'vuex'
-import store from './store'
-
-Vue.use(Vuex)
-
-export default {
-  name: 'App',
-  router: Router,
-  components: {
-    // Components remain the same
-  },
-  computed: {
-    // Compute the product ID for the edit link
-    productId() {
-      // You can obtain the product ID from Vuex store or any other source
-      // For demonstration purpose, let's assume we have a computed property in the store
-      return this.$store.state.selectedProductId
-    }
-  }
+<style>
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
 }
-</script>
+
+.nav-container {
+  display: flex;
+  justify-content: center; /* Center-align the contents horizontally */
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px; /* Adjust margin for spacing */
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+</style>
