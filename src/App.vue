@@ -1,4 +1,3 @@
-<!--  -->
 <template>
   <nav class="navbar">
     <div class="nav-container">
@@ -24,7 +23,7 @@
 .nav-link {
   color: #fff;
   text-decoration: none;
-  margin: 0 10px; /* Adjust margin for spacing */
+  margin: 0 10px;
 }
 
 .nav-link:hover {

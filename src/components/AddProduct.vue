@@ -1,4 +1,3 @@
-<!-- Add Product.vue -->
 <template>
   <div class="add-product-container">
     <h2>Add Product</h2>
@@ -17,7 +16,7 @@
           <input type="number" id="price" v-model.number="price" class="form-control" placeholder="Enter Product Price" min="0" required>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn-submit">Add Product</button>
+          <button type="submit" class="btn btn-success">Add Product</button>
         </div>
       </form>
     </transition>
@@ -40,22 +39,18 @@ export default {
       if (!this.name || !this.description || !this.price) {
         return; 
       }
-
       const product = {
         name: this.name,
         description: this.description,
         price: this.price
       };
-      
       this.$store.dispatch('addProduct', product);
-
       this.name = '';
       this.description = '';
       this.price = '';
-
-      this.isAdding = true; // Show success message
+      this.isAdding = true;
       setTimeout(() => {
-        this.isAdding = false; // Reset after 3 seconds
+        this.isAdding = false;
       }, 3000);
     }
   }

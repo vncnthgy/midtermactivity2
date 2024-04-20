@@ -10,7 +10,7 @@ export const store = new Vuex.Store({
       { id: 4, name: 'FreshBrew Coffee Maker', description: 'Start your day off right with the FreshBrew Coffee Maker. This stylish and compact coffee maker brews delicious, flavorful coffee in minutes, allowing you to enjoy a perfect cup every morning. With its programmable timer and automatic shut-off feature, the FreshBrew Coffee Maker makes brewing your favorite blend effortless and convenient.', price: 1600.00, },                                                                                         
       { id: 5, name: 'CozyCloud Memory Foam Pillow', description: 'Drift off to dreamland in ultimate comfort with the CozyCloud Memory Foam Pillow. This plush pillow is designed to provide optimal support and alignment for your head and neck, helping to reduce pressure points and alleviate discomfort while you sleep. With its breathable cover and hypoallergenic materials, the CozyCloud Pillow ensures a restful nights sleep every time.', price: 900.00, },
     ], 
-    nextProductId: 4
+    nextProductId: 6
   },
   mutations: {
     addProduct(state, product) {
@@ -24,7 +24,6 @@ export const store = new Vuex.Store({
       state.products = state.products.filter(product => product.id !== productId);
     }
   },
-  
   actions: {
     addProduct({ commit }, product) {
       commit('addProduct', product);
