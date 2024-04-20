@@ -107,3 +107,11 @@ Develop a Vue.js application that allows users to manage a list of products. The
 ![Image 9](src/assets/images/image9.png)
 
 ![Image 10](src/assets/images/image10.png)
+
+![Image 11](src/assets/images/image11.png)
+
+![Image 12](src/assets/images/image12.png)
+
+![Image 13](src/assets/images/image13.png)
+
+![Image 14](src/assets/images/image14.png)

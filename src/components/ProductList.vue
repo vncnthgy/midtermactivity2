@@ -47,7 +47,6 @@
 
 <script>
 export default {
-  name: 'productList',
   data() {
     return {
       productMessage: '',
@@ -128,6 +127,10 @@ export default {
     border-radius: 5px;
   }
 
+  .list-product-message {
+    max-width: 100%;
+  }
+
   .editing {
     background-color: #fefbd8;
     transition: background-color 0.3s ease;
@@ -141,9 +144,5 @@ export default {
   .deleting {
     background-color: #ff9999;
     transition: background-color 0.3s ease;
-  }
-
-  .list-product-message {
-    max-width: 100%;
   }
 </style>

@@ -74,11 +74,11 @@ export default {
     border-radius: 5px;
   }
 
-  .text-center {
-    text-align: center;
-  }
-
   .add-product-message {
     max-width: 100%;
+  }
+
+  .text-center {
+    text-align: center;
   }
 </style>
