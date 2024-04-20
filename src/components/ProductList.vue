@@ -7,31 +7,34 @@
           <th>Name</th>
           <th>Description</th>
           <th>Price</th>
-          <th>Actions</th>
+          <th>Options</th>
         </tr>
       </thead>
       <tbody>
-        
-        <tr v-for="product in products" :key="product.id" :class="{ 'fade-out': product.isSaving, 'bounce-animation': product.isDeleting }">
-          <td>
+        <tr v-for="product in products" :key="product.id">
+          <td :class="{ 'editing': product.editing, 'saving': product.isSaving, 'deleting': product.isDeleting }">
             <span v-if="!product.editing" @click="editProduct(product)">{{ product.name }}</span>
             <input v-else v-model="product.editedName" type="text" id="name" class="form-control" required>
           </td>
-          <td>
+          <td :class="{ 'editing': product.editing, 'saving': product.isSaving, 'deleting': product.isDeleting }">
             <span v-if="!product.editing" @click="editProduct(product)">{{ product.description }}</span>
             <input v-else v-model="product.editedDescription" type="text" class="form-control" required>
           </td>
-          <td>
+          <td :class="{ 'editing': product.editing, 'saving': product.isSaving, 'deleting': product.isDeleting }">
             <span v-if="!product.editing" @click="editProduct(product)">₱{{ product.price }}</span>
             <input v-else v-model="product.editedPrice" type="number" class="form-control" required>
           </td>
-          <td :class="{ 'fade-out': product.isSaving }">
+          <td :class="{ 'editing': product.editing, 'saving': product.isSaving, 'deleting': product.isDeleting, 'fade-out': product.isSaving }">
             <button @click="product.editing ? saveProduct(product) : toggleEditMode(product)" class="btn btn-primary mr-2">
-              {{ product.editing ? 'Save' : 'Edit' }}</button>
-            <button @click="deleteProduct(product)" class="btn btn-danger">Delete</button>
+              <span v-if="product.isSaving" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              {{ product.editing ? 'Save' : 'Edit' }}
+            </button>
+            <button @click="deleteProduct(product)" class="btn btn-danger">
+              <span v-if="product.isDeleting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Delete
+            </button>
           </td>
         </tr>
-
       </tbody>
     </table>
     <div v-else>
@@ -43,8 +46,6 @@
 <script>
 export default {
   name: 'productList',
-  components: {
-  },
   data() {
   return {
     productMessage: '',
@@ -71,107 +72,55 @@ export default {
       }
     },
     saveProduct(product) {
-      if (confirm("Are you sure you want to edit this product?")) {
+      if (!confirm("Are you sure you want to edit this product?")) {
+        this.toggleEditMode(product);
+        return;
+      }
+      product.isSaving = true;
+      setTimeout(() => {
         product.name = product.editedName;
         product.description = product.editedDescription;
         product.price = product.editedPrice;
         product.editing = false;
-        product.isSaving = true;
         this.successMessage = 'Product edited successfully!';
+        product.isSaving = false; 
         setTimeout(() => {
-          product.isSaving = false; 
           this.successMessage = '';
         }, 3000); 
-      }
+      }, 1500);
     },
-      deleteProduct(product) {
-      if (confirm("Are you sure you want to delete this product?")) {
-        product.isDeleting = true;
+    deleteProduct(product) {
+      if (!confirm("Are you sure you want to delete this product?")) {
+        return;
+      }
+      product.isDeleting = true;
+      setTimeout(() => {
         const index = this.products.findIndex(p => p.id === product.id);
-          if (index !== -1) {
-            this.products.splice(index, 1);
-          }
+        if (index !== -1) {
+          this.products.splice(index, 1);
+        }
         this.successMessage = 'Product deleted successfully!';
         setTimeout(() => {
           this.successMessage = '';
-        }, 3000); 
-      }
+        }, 3000);
+      }, 1500);
     },
-    editProductFromButton(product) {
-      this.editProduct(product);
-    }
   },
 };
 </script>
 
-<style>
-.product-enter-active, .product-leave-active {
-  transition: opacity 0.5s;
-}
+<style scoped>
+  .editing {
+    transition: background-color 0.3s ease;
+  }
 
-.product-enter, .product-leave-to {
-  opacity: 0;
-}
+  .saving {
+    background-color: #99ff99;
+    transition: background-color 0.3s ease;
+  }
 
-/* Animation and Transition Styles */
-.fade-out {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.fade-out:hover {
-  opacity: 0.5;
-}
-
-@keyframes saveAnimation {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.save-animation {
-  animation: saveAnimation 0.5s ease;
-}
-
-@keyframes bounceAnimation {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.bounce-animation {
-  animation: bounceAnimation 0.5s ease;
-}
-
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: #f2f2f2;
-  text-align: left;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Button Styles */
-button {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #c82333;
-}
+  .deleting {
+    background-color: #ff9999;
+    transition: background-color 0.3s ease;
+  }
 </style>
