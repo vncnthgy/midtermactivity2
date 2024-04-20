@@ -83,7 +83,7 @@ Develop a Vue.js application that allows users to manage a list of products. The
 **Run the project:**
 
 ```
-    npm run dev
+    npm run serve
 ```
 
 ## Screenshots
@@ -92,9 +92,18 @@ Develop a Vue.js application that allows users to manage a list of products. The
 
 ![Image 2](src/assets/images/image2.png)
 
-<!-- ![Image 3](src/assets/images/image3.png) -->
+![Image 3](src/assets/images/image3.png)
 
-<!-- ![Image 4](src/assets/images/image4.png) -->
+![Image 4](src/assets/images/image4.png)
 
-<!-- ![Image 5](src/assets/images/image5.png) -->
+![Image 5](src/assets/images/image5.png)
 
+![Image 6](src/assets/images/image6.png)
+
+![Image 7](src/assets/images/image7.png)
+
+![Image 8](src/assets/images/image8.png)
+
+![Image 9](src/assets/images/image9.png)
+
+![Image 10](src/assets/images/image10.png)
