@@ -1,26 +1,31 @@
 <!-- ProductList.vue -->
 <template>
-    <div>
-      <div v-for="product in products" :key="product.id">
-        <h3>{{ product.name }}</h3>
-        <p>{{ product.description }}</p>
-        <p>{{ product.price }}</p>
-        <button @click="editProduct(product)">Edit</button>
-      </div>
+  <div>
+    <h2>Product List</h2>
+    <div v-for="(product, index) in products" :key="index">
+      <ProductItem :product="product" @edit="editProduct(index)" @delete="deleteProduct(index)" />
     </div>
-  </template>
-  
-  <script>
-  export default {
-    props: ['products'],
-    methods: {
-      editProduct(product) {
-        this.$emit('edit-product', product);
-      },
-      }
+  </div>
+</template>
+
+<script>
+import { mapState } from 'vuex'
+import ProductItem from './ProductItem.vue'
+
+export default {
+  components: {
+    ProductItem
+  },
+  computed: {
+    ...mapState(['products'])
+  },
+  methods: {
+    editProduct(index) {
+      // Navigate to edit product page or implement in-place editing
+    },
+    deleteProduct(index) {
+      this.$store.dispatch('deleteProduct', index)
     }
-  </script>
-  
-  <style scoped>
-  /* Add your scoped styles here */
-  </style>
+  }
+}
+</script>
